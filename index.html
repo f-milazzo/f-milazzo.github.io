@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal website</title>
+    <title>Fabio Milazzo - Personal Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,6 +12,12 @@
             text-align: center;
         }
         h1 { color: #ff5733; }
+        .intro {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
         .chapter {
             background-color: #f4f4f4;
             padding: 10px;
@@ -46,21 +52,125 @@
 <body>
 
     <h1>Fabio Milazzo</h1>
-    
-    <!-- Sezione con sottocapitoli -->
-    <div class="chapter" onclick="toggleContent('general')">ℹ️ What I do</div>
-    <div id="general" class="content">
-        <div class="subchapter" onclick="toggleContent('engineering')">🔧 Mechanical Engineering</div>
-        <div id="engineering" class="subcontent">I work in the field of mechanical engineering, specializing in industrial design and automation.</div>
 
-        <div class="subchapter" onclick="toggleContent('coding')">💻 Coding & Web Development</div>
-        <div id="coding" class="subcontent">I also have experience in web development, mainly working with HTML, CSS, and JavaScript.</div>
+    <div class="intro">
+        <p> Welcome! This is my personal website. 
+            Credits to ChatGPT for writing the whole HTML code behind it, I just wrote the text and chose the pictures! The future really is now!
+            ChatGPT wrote the HTML code for it, so it's not my fault it looks bad ;)
+            I am a Mechanical Engineering after all, Matlab and Python are more up my alley. 
+            Add the disclaimer that I do not know HTML language but I know natural language and luckily ChatGPT knows both.
+        </p>
     </div>
 
-    <!-- Sezione senza sottocapitoli -->
-    <div class="chapter" onclick="toggleContent('projects')">📜 My Projects</div>
-    <div id="projects" class="content">
-        I have worked on various projects ranging from mechanical design to web applications. Some notable projects include building automated systems and creating interactive websites.
+    <div class="chapter" onclick="toggleContent('what_i_do')">ℹ️ What I do</div>
+    <div id="what_i_do" class="content">
+        <p>Currently pursuing a Master's in Mechanical Engineering at TU Delft, I focus on the track of High-Tech engineering, where the boundaries of technology are being pushed forward every day.</p>
+    </div>
+
+    <div class="chapter" onclick="toggleContent('what_i_have_done')">🛠️ What I have done</div>
+    <div id="what_i_have_done" class="content">
+        <div class="subchapter" onclick="toggleContent('project1')">🤖 Compliant Jumper - <a href="Compliant_Mechanisms_Paper.pdf" target="_blank">Compliant Mechanism Paper</a></div>
+        <div id="project1" class="subcontent">
+            <p>Over the course of this 5-month project, my team and I carried out the conceptualization, design, fabrication, and testing of a novel compliant jumping robot.
+            The begginning of the design was marked by an iteration across multiple design solutions. </p>The first of these solution was characterized by a sturdy, bi-directional (not requiring self straightening) frame,
+          with 3 four-bar linkages as a propelling and steering mechanism.
+            <figure>
+                <img src="images/Compliant/triangle.png" alt="Triangle" style="max-width: 30%; border-radius: 5px;">
+                <figcaption>Triangle design solution.</figcaption>
+            </figure>
+            
+            <p>Considerations regarding energy/mass efficiency led to a bio-inspired design, with a central body propelled by 3 legs.  Having settled on this "spider" design, we
+            shifter our focus to compliant solutions that would first of all allow for sufficient energy storage, and possibly achieve steerability through a single actuator.</p>
+            <figure>
+                <img src="images/Compliant/spider.png" alt="Spider" style="max-width: 30%; border-radius: 5px;">
+                <figcaption>Spider design solution.</figcaption>
+            </figure>
+
+          <p>A first iteration featured a simple compliant revolute joint acting as a knee for the leg:</p>
+            <figure>
+                <img src="images/Compliant/first-knee.jpg" alt="first-knee" style="max-width: 30%; border-radius: 5px;">
+                <figcaption>Knee compliant revolute joint</figcaption>
+            </figure>
+                    <p>This design was found to be too stiff, and even though a parallel configuration of multiple revolute joints was considered, steerability could not be achieved without multiple actuation solutions.</p>
+                    <p>We then turned to non-linearities in known PRBMs to achieve steerability. The first legs design featured curved beams as sliding hips for rigid legs.</p>
+                      <figure>
+                <img src="images/Compliant/curved-sketch.jpg" alt="curved_sketch" style="max-width: 30%; border-radius: 5px;">
+                <img src="images/Compliant/curved-prbm.jpg" alt="curved-prbm" style="max-width: 50%; border-radius: 5px;">
+                <figcaption>Initial curved beam sketch and PRBM tuning graph.</figcaption>
+            </figure>
+          <p>Through proper dimensioning of the curved flexures, a different peak force based on the dispalcement was achieved.</p>
+          <p>This solution was then modeled and fabricated:</p>
+          <figure>
+                <img src="images/Compliant/curved_jumper.jpg" alt="CAD" style="max-width: 30%; border-radius: 5px;">
+                <img src="images/Compliant/curved-parts.jpg" alt="3D print" style="max-width: 40%; border-radius: 5px;">
+                <figcaption>CAD model and printed components</figcaption>
+            </figure>
+
+          <p> Though promising, the curved legs were eventually discarded in favor of an off-set based design, were non linearity was generated by a delay in the activation of the legs. A non-stiff, sliding hip would allow 
+          for a differential loading of the right and left hip in the figure below. Once the slider hits the stopper, the right leg also starts loading the main hip. Making the right leg stiffer allows it to "catch up" to the 
+          left leg, and eventually provide a stronger force, leading to an inversion of the steering direction.</p>
+          <figure>
+                <img src="images/Compliant/delay-sketch.jpg" alt="Delay sketch" style="max-width: 30%; border-radius: 5px;">
+                <figcaption>Working principle of the delayed force solution.</figcaption>
+          </figure>          
+          <p>The final design reverted to a knee-based energy storage solution, which implemented a novel series-parallel compliant revolute joint: </p>
+          <figure>
+                <img src="images/Compliant/knee-prototype.jpg" alt="Knee prototype" style="max-width: 30%; border-radius: 5px;">
+                <figcaption>Prototype of the compliant knee joint</figcaption>
+          </figure>           
+          <p>A flexure was then added to serve as hinge in the hip position, connecting the slider to the upper half of the leg. This design solution was solved through a PRBM 3R model
+          of the fix-fix long length flexures in the knee, and a cantilever beam with a force at the free end model for the hip.</p>
+          <figure>
+                <img src="images/Compliant/PRBMCOMP.png" alt="PRBMCOMP" style="max-width: 30%; border-radius: 5px;">
+                <figcaption>PRBM model </figcaption>
+          </figure>    
+          <p>The model was solved to obtained a force/displacement curve along the vertical movement direction of the feet. Tuning of the various stiffnesses led to a differential force based on the dispalcement:</p>          
+                    <figure>
+                <img src="images/Compliant/Final_PRBM.png" alt="Final_PRBM" style="max-width: 60%; border-radius: 5px;">
+                <figcaption>PRBM-based force/displacement curves showcasing different peak force direction at different displacements.</figcaption>
+          </figure>   
+          <p>Experimental and FEM analysis were conducted on the knee joints and on the complete legs. The results validated the 3R model, and, as expected, showed discrepancies
+          regarding the hip assumptions. The PRBM value for hip spring k1 was then fitted to the experimental data:</p>
+          <figure>
+                <img src="images/Compliant/Leg2Mes1.jpg" alt="Leg2Mes1" style="max-width: 40%; border-radius: 5px;">
+                <img src="images/Compliant/leg2mes2fitt" alt="Leg2mes2fitt" style="max-width: 40%; border-radius: 5px;">
+                <figcaption>Knee force/displacement validation (left) and Complete leg validation and refitting (right)</figcaption>
+            </figure>       
+	  <p>After refitting, the PRBM-based force/displacement curves revealed a loss of steerability, due to leg 3 beeing the peak force contributor for any displacement.</p>
+          <p>The tested legs were nonetheless mounted on the main body, and a string-based charging mechanism was developed to allow for purely vertical loading:</p>
+                    <figure>
+                <img src="images/Compliant/finalmodel2.png" alt="finalmodel2" style="max-width: 30%; border-radius: 5px;">
+                <figcaption>Final actuation scheme.</figcaption>
+            </figure>
+          <p>Though not all initially set requirements were statisfied, proof of concept of single actuation steerability was shown, and project was considered an overall success</p>
+          <figure>
+                <img src="images/Compliant/built_model.png" alt="built_model" style="max-width: 50%; border-radius: 5px;">
+                <figcaption>Jumper posing in the workshop.</figcaption>
+            </figure>
+        </div>
+
+        <div class="subchapter" onclick="toggleContent('project2')">📌 Project 2</div>
+        <div id="project2" class="subcontent">Description of project 2.</div>
+
+        <div class="subchapter" onclick="toggleContent('extra_curriculars')">🌟 Extra Curriculars</div>
+        <div id="extra_curriculars" class="subcontent">
+            <div class="subchapter" onclick="toggleContent('maggiolino')">🚗 Maggiolino</div>
+            <div id="maggiolino" class="subcontent">Details about my involvement in the Maggiolino project.</div>
+
+            <div class="subchapter" onclick="toggleContent('solare')">☀️ Solare</div>
+            <div id="solare" class="subcontent">Details about my involvement in the Solare project.</div>
+        </div>
+    </div>
+
+    <div class="chapter" onclick="toggleContent('who_i_am')">👤 Who I am & What I like</div>
+    <div id="who_i_am" class="content">
+        <p>A bit about me, my interests, hobbies, and what I enjoy in life.</p>
+    </div>
+
+    <div class="chapter" onclick="toggleContent('contact_cv')">📄 Contact & CV</div>
+    <div id="contact_cv" class="content">
+        <p>You can contact me at: <strong>fabio@milazzo.it</strong></p>
+        <p>Download my CV: <a href="cv.pdf" target="_blank">Click here</a></p>
     </div>
 
     <script>
