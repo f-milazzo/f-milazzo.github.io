@@ -94,7 +94,7 @@
                     <p>This design was found to be too stiff, and even though a parallel configuration of multiple revolute joints was considered, steerability could not be achieved without multiple actuation solutions.</p>
                     <p>We then turned to non-linearities in known PRBMs to achieve steerability. The first legs design featured curved beams as sliding hips for rigid legs.</p>
                       <figure>
-                <img src="images/Compliant/curved-sketch.jpg" alt="curved_sketch" style="max-width: 30%; border-radius: 5px;">
+                <img src="images/Compliant/curved_sketch.jpg" alt="curved_sketch" style="max-width: 30%; border-radius: 5px;">
                 <img src="images/Compliant/curved-prbm.jpg" alt="curved-prbm" style="max-width: 50%; border-radius: 5px;">
                 <figcaption>Initial curved beam sketch and PRBM tuning graph.</figcaption>
             </figure>
@@ -121,8 +121,9 @@
           <p>A flexure was then added to serve as hinge in the hip position, connecting the slider to the upper half of the leg. This design solution was solved through a PRBM 3R model
           of the fix-fix long length flexures in the knee, and a cantilever beam with a force at the free end model for the hip.</p>
           <figure>
+                <img src="images/Compliant/PRBM_sketch.png" alt="PRBM_sketch" style="max-width: 30%; border-radius: 5px;">
                 <img src="images/Compliant/PRBMCOMP.png" alt="PRBMCOMP" style="max-width: 30%; border-radius: 5px;">
-                <figcaption>PRBM model </figcaption>
+                <figcaption>PRBM initial sketch and final model </figcaption>
           </figure>    
           <p>The model was solved to obtain a force/displacement curve along the vertical movement direction of the feet. Tuning of the various stiffnesses led to a differential force based on the dispalcement:</p>          
                     <figure>
@@ -140,7 +141,8 @@
           <p>The tested legs were nonetheless mounted on the main body, and a string-based charging mechanism was developed to allow for purely vertical loading:</p>
                     <figure>
                 <img src="images/Compliant/finalmodel2.png" alt="finalmodel2" style="max-width: 30%; border-radius: 5px;">
-                <figcaption>Final actuation scheme.</figcaption>
+                <img src="images/Compliant/Subsystems.jpg" alt="finalmodel2" style="max-width: 30%; border-radius: 5px;">
+                <figcaption>Final actuation scheme and subsystems partition.</figcaption>
             </figure>
           <p>Though not all initially set requirements were statisfied, proof of concept of single actuation steerability was shown, and project was considered an overall success</p>
           <figure>
