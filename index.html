@@ -54,10 +54,10 @@
 
     <div class="chapter" onclick="toggleContent('what_i_have_done')">🛠️ What I have done</div>
     <div id="what_i_have_done" class="content">
-        <div class="chapter" onclick="loadProject('project1', 'projects/project1.html')">🤖 Compliant Jumper - <a href="Compliant_Mechanisms_Paper.pdf" target="_blank">Compliant Mechanism Paper</a></div>
-        <div id="project1" class="subcontent"></div>
+        <div class="chapter" onclick="toggleProject('project1', 'projects/project1.html')">🤖 Compliant Jumper</div>
+        <div id="project1" class="content"></div>
 
-        <div class="chapter" onclick="loadProject('project2', 'projects/project2.html')">📌 Project 2</div>
+        <div class="chapter" onclick="toggleProject('project2', 'projects/project2.html')">📌 Project 2</div>
         <div id="project2" class="content"></div>
     </div>
 
@@ -78,16 +78,22 @@
             content.style.display = content.style.display === "block" ? "none" : "block";
         }
 
-        function loadProject(divId, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(divId).innerHTML = data;
-                    document.getElementById(divId).style.display = "block";
-                })
-                .catch(error => console.error('Error loading project:', error));
+        function toggleProject(divId, file) {
+            var content = document.getElementById(divId);
+            if (content.innerHTML === "") {
+                fetch(file)
+                    .then(response => response.text())
+                    .then(data => {
+                        content.innerHTML = data;
+                        content.style.display = "block";
+                    })
+                    .catch(error => console.error('Error loading project:', error));
+            } else {
+                content.style.display = content.style.display === "block" ? "none" : "block";
+            }
         }
     </script>
 
 </body>
 </html>
+
