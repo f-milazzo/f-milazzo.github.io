@@ -1,2 +1,86 @@
-<div>            
+<div>      
+    <p>This project consisted in the multisciplinary conceptual design of a mechanical press, 
+        based on commercially available options, followed by the dimensioning of the mechanical components.
+    </p>
+    <figure>
+            <img src="images/Press/Pressa.png" alt="axonometry" style="max-width: 55%; border-radius: 5px;">
+            <img src="images/Press/esploso.png" alt="exploded axonometry" style="max-width: 35%; border-radius: 5px;">
+            <figcaption>Final CAD model and exploded view.</figcaption>
+    </figure>
+    <p>My focus in this project lied on the preliminary kinematic analysis needed to set the dimensions of the actuation mechanism,
+        and the final vibrational analysis on the whole trasmission.
+    </p>
+    <p>Having chosen a simple crank-slider mechanism, the kinematic analysis focused on the length of the 
+        rod, given a crank radius of 150mm set by the preoduct requirements.
+        <figure>
+            <img src="images/Press/kinematics.png" alt="kynematics" style="max-width: 30%; border-radius: 5px;">
+            <figcaption>Crank-slider kynamtics model.</figcaption>
+        </figure>    
+        The goal of this analysis was to find a suitable caratheristic ratio λ = r/l that would minimize the velocity of the
+        slider towards the end of its stroke, where it comes inot contact with the workpiece.
+    </p>
+    <figure>
+        <img src="images/Press/speed_kineamtics.png" alt="velocity" style="max-width: 45%; border-radius: 5px;">
+        <img src="images/Press/detail_kinematics.png" alt="velocity detail" style="max-width: 45%; border-radius: 5px;">
+        <figcaption>Velocity of the slider during the crank's revolution, for various λ values.</figcaption>
+    </figure>
+    <p>A ratio of λ = 1/10 was eventually selected, as it allowed for performance close to the ideal case of λ = 0, within a reasonable size.</p>
+    <p>The rod dimensioning process was aimed at maximing the precision of the pressing process, i.e. minimizing its compression
+        under the nominal load of 250ton.<br>
+    A simple, sturdy design was reached after some iterations, resulting in a total compression of 0.13mm, less than 2%
+    of the rated tonnage point RTP = 10mm (the nominal stroke).
+    </p>
+    <figure>
+        <img src="images/Press/biella_fem.png" alt="rod_fem" style="max-width: 45%; border-radius: 5px;">
+        <figcaption>Displacement result of FEM on the rod.</figcaption>
+    </figure>    
+    <p>After additional stress analysis steps, the detail design was also carried out.
+        Bearings where selected based on the load and predicted lifetime, and the design of the rod was
+    adapted to facilitate assembly and maintenance.</p>
+    <figure>
+        <img src="images/Press/biella.png" alt="rod_final" style="max-width: 55%; border-radius: 5px;">
+        <figcaption>Final rod+bearings solution.</figcaption>
+    </figure> 
+    <p>For what concerns the vibrational analysis, the whole drive-slider trasmission was analyzed.
+        <figure>
+            <img src="images/Press/model.png" alt="vibr_model" style="max-width: 45%; border-radius: 5px;">
+            <figcaption>Concentred parameters model of entire trasmission.</figcaption>
+        </figure>  
+    Inertia and stiffness parameters were computed from the CAD models and through FEM, respectively. The latter was in particoular computed
+    by applying a unit load and measuring the displacement of the point of interest, for each component.
+    <figure>
+        <img src="images/Press/vibrazioni_parameters.png" alt="vibr_param" style="max-width: 45%; border-radius: 5px;">
+        <figcaption>Displacement of the trasmission components under unit load.</figcaption>
+    </figure>  
+    Damping parameters were obtained by arbitrairly setting the damping ratio at 0.5%, and computing Rayleigh's parameters α and β,
+    under the hypothesis of low damping.
+</p>
+<p>The system was first analyzed without the crank-slider, to obtain linear analitycal solutions,
+    that were used for a modal analysis. The crank slider was then reintroduced, together with the fabrication load.<br>
+    In the absence of a control model for the electric motor, its angular velocity was set to be constant. The effect on the irregularity parameter
+    i = (ω_max − ω_min)/ω_av of the farbication periodic load was studied.
+</p>
+    <p>This complete model was described through non-linear EOMs, which were divided between free and constrained DOFs and solved numerically</p>
+    <figure>
+        <img src="images/Press/equations_vibr.png" alt="equations" style="max-width: 70%; border-radius: 5px;">
+        <img src="images/Press/solution.png" alt="ode_solution" style="max-width: 45%; border-radius: 5px;">
+        <figcaption>Nonlinear EOMs and angular velocity solutions.</figcaption>
+    </figure>
+    <p>The numerical solution was used to check wether or not the initial requirements on irregularity i 
+        had been satisfied.
+    </p>
+    <p>The aim of this multisciplinary project was to both strengthen the soft skills of the 4 participants,
+        through groupwork and presentation, as well as experience first-hand the process of product design.
+        Literature, ISO standards and commercial products were both analyzed and implemented, to deliver a final product
+        that satisfied the product requirements.
+    </p>
+    <figure>
+        <img src="images/Press/graduation.jpg" alt="graduation" style="max-width: 45%; border-radius: 5px;">
+        <figcaption>Me, my proud engineer grandpa and a 3D printed model of the press at my graduation.</figcaption>
+    </figure>
+
+    
+
+
+
 </div>
