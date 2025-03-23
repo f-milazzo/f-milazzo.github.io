@@ -40,10 +40,7 @@
 
     <div class="intro">
         <p> Welcome! This is my personal website. 
-            Credits to ChatGPT for writing the whole HTML code behind it, I just wrote the text and chose the pictures! The future really is now!
-            ChatGPT wrote the HTML code for it, so it's not my fault it looks bad ;)
-            I am a Mechanical Engineering after all, Matlab and Python are more up my alley. 
-            Add the disclaimer that I do not know HTML language but I know natural language and luckily ChatGPT knows both.
+            Have a look around, and if you find something you enjoy, click the very last section and let me know!
         </p>
     </div>
 
@@ -52,6 +49,7 @@
         <p>Currently pursuing a Master's in Mechanical Engineering at TU Delft, I focus on the track of High-Tech engineering, where the boundaries of technology are being pushed forward every day.</p>
     </div>
 
+
     <div class="chapter" onclick="toggleContent('what_i_have_done')">🛠️ What I have done</div>
     <div id="what_i_have_done" class="content">
         <div class="chapter" onclick="toggleProject('project1', 'projects/project1.html')">🤖 Compliant Jumper - <a href="attachments\Compliant_Mechanisms_Paper.pdf" target="_blank">Compliant Mechanism Paper</a></div>
@@ -59,6 +57,20 @@
 
         <div class="chapter" onclick="toggleProject('project2', 'projects/project2.html')">⚙️ Mechanical Press - <a href="attachments\Progetto_Finale.pdf" target="_blank">Mechanical Press Paper (in Italian)</a></div>
         <div id="project2" class="content"></div>
+
+        <div class="chapter" onclick="toggleContent('extracurriculars')">🎓 Extracurriculars</div>
+        <div id="extracurriculars" class="content">
+            <div class="chapter" onclick="toggleProject('activity1', 'projects/activity1.html')"> 🪲 SuperBeetle</div>
+            <div id="activity1" class="content"></div>
+
+            <div class="chapter" onclick="toggleProject('activity2', 'projects/activity2.html')">🔋 Photovoltaic system</div>
+            <div id="activity2" class="content"></div>
+        </div>
+    </div>
+
+        <div class="chapter" onclick="toggleContent('what_i_will_do')">🔮 What I will do</div>
+    <div id="what_i_will_do" class="content">
+        <p>Currently pursuing a Master's in Mechanical Engineering at TU Delft, I focus on the track of High-Tech engineering, where the boundaries of technology are being pushed forward every day.</p>
     </div>
 
     <div class="chapter" onclick="toggleContent('who_i_am')">👤 Who I am & What I like</div>
@@ -72,7 +84,15 @@
         <p> </p>
         <p>You can contact me at: <a href="mailto:fabio@milazzo.it">fabio@milazzo.it</a></p>
         <p>or download my CV: <a href="attachments\CV_Milazzo.pdf" target="_blank">CV_Milazzo</a></p>
+        <p>or take a look at my LinkedIn: <a href="https://www.linkedin.com/in/fabio-milazzo-47a1ab325/" target="_blank">🔗Fabio Milazzo</a></p>
     </div>
+
+
+    <div style="font-size: 11px; color: gray; margin-top: 20px; text-align: center;">
+        Disclaimer: I do not know HTML language, though I know a couple natural ones and luckily for me ChatGPT knows them all.
+        It wrote the whole HTML code, I just wrote the words and chose the pictures. I am a Mechanical Engineering after all: Matlab and Python are more up my alley. 
+    </div>
+
 
     <script>
         function toggleContent(id) {
